@@ -1,0 +1,18 @@
+kilo.c: In function ‘editorOpen’:
+kilo.c:379:36: warning: pointer targets in passing argument 2 of ‘getline’ differ in signedness [-Wpointer-sign]
+  379 |    while(( linelen = getline(&line,&linecap ,fp)) != -1){
+      |                                    ^~~~~~~~
+      |                                    |
+      |                                    ssize_t * {aka long int *}
+In file included from kilo.c:35:
+/usr/include/stdio.h:702:46: note: expected ‘size_t * restrict’ {aka ‘long unsigned int * restrict’} but argument is of type ‘ssize_t *’ {aka ‘long int *’}
+  702 |                           size_t *__restrict __n,
+      |                           ~~~~~~~~~~~~~~~~~~~^~~
+kilo.c: In function ‘editorDrawStatusBar’:
+kilo.c:521:47: warning: too many arguments for format [-Wformat-extra-args]
+  521 |     int len = snprintf(status ,sizeof(status),"%20s - %dlines",
+      |                                               ^~~~~~~~~~~~~~~~
+kilo.c: In function ‘editorProcessKeypress’:
+kilo.c:711:48: warning: statement with no effect [-Wunused-value]
+  711 |                       if(E.cy > E.numrows)E.cy - E.numrows;
+      |                                           ~~~~~^~~~~~~~~~~

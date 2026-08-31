@@ -1,0 +1,13 @@
+strerror() comes from <string.h>.
+strerror() is like perror() (which we use in die()), but it takes the errno value as an argument and returns the human-readable string for that error code, so that we can make the error a part of the status message we display to the user.
+The above code doesn’t actually compile, because we are trying to call editorSetStatusMessage() before it is defined in the file. You can’t do that in C, because C was made to be a language that can be compiled in a single pass, meaning it should be possible to compile each part of a program without knowing what comes later in the program
+When we call a function in C, the compiler needs to know the arguments and return value of that function. We can tell the compiler this information about editorSetStatusMessage() by declaring a function prototype for it near the top of the file. This allows us to call the function before it is defined. We’ll add a new /*** prototypes ***/ section and put the declaration under it.
+
+
+
+
+
+
+
+
+
